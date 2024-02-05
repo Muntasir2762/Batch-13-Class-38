@@ -1,0 +1,25 @@
+
+
+CRUD = 
+
+==============Show Data=========
+
+=>Design- HTML Table (Bootstarp)
+
+
+=============Insert Data========
+
+=>Design - HTML Form (Bootstarp)
+
+
+======HTTP Verbs====
+
+GET
+POST
+PUT
+DELETE
+
+
+============Query=======
+
+INSERT INTO students (name, roll, phone, email, address, class) VALUES ('Bablu', 23, '732658732', 'Dhaka, Uttara', 6);
