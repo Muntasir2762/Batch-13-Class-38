@@ -23,3 +23,14 @@ DELETE
 ============Query=======
 
 INSERT INTO students (name, roll, phone, email, address, class) VALUES ('Bablu', 23, '732658732', 'Dhaka, Uttara', 6);
+SELECT * FROM students;
+DELETE FROM students where id=1;
+
+
+
+$array = {name: 'bablu', roll: 2, phone: '938509328'}
+
+
+$array = [1 , 2 ,3, 4];
+
+

@@ -1,3 +1,12 @@
+
+
+<?php
+
+include 'config.php';
+
+?>
+
+
 <!doctype html>
 <html lang="en">
 
@@ -32,30 +41,54 @@
     <table class="table">
         <thead>
             <tr>
-                <th scope="col">#</th>
-                <th scope="col">First</th>
-                <th scope="col">Last</th>
-                <th scope="col">Handle</th>
+                <th scope="col">SL</th>
+                <th scope="col">Name</th>
+                <th scope="col">Email</th>
+                <th scope="col">Phone</th>
+                <th scope="col">Class</th>
+                <th scope="col">Roll</th>
+                <th scope="col">Address</th>
+                <th scope="col">Action</th>
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <th scope="row">1</th>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-            </tr>
-            <tr>
-                <th scope="row">2</th>
-                <td>Jacob</td>
-                <td>Thornton</td>
-                <td>@fat</td>
-            </tr>
-            <tr>
-                <th scope="row">3</th>
-                <td colspan="2">Larry the Bird</td>
-                <td>@twitter</td>
-            </tr>
+
+        <?php
+
+           $query = "SELECT * FROM students";
+
+           $result = mysqli_query($connection, $query);
+
+           if($result){
+
+            $serialNumber = 1;
+            while($row = mysqli_fetch_assoc($result)){
+                
+                $id      = $row['id'];  //1, 2, 4
+                $name    = $row['name'];
+                $roll    = $row['roll'];
+                $phone   = $row['phone'];
+                $email   = $row['email'];
+                $class   = $row['class'];
+                $address = $row['address'];
+
+                echo '<tr>
+                <td scope="row">'.$serialNumber.'</td>
+                <td>'.$name.'</td>
+                <td>'.$email.'</td>
+                <td>'.$phone.'</td>
+                <td>'.$class.'</td>
+                <td>'.$roll.'</td>
+                <td>'.$address.'</td>
+                <td>
+                <a href= "" class="btn btn-primary">Edit</a>
+                <a href= "delete.php?id='.$id.'" class="btn btn-danger">Delete</a>
+                </td>
+            </tr>';
+            $serialNumber++;
+            };
+           }
+        ?>
         </tbody>
     </table>
     </section>
