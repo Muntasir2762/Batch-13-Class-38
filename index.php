@@ -81,8 +81,8 @@ include 'config.php';
                 <td>'.$roll.'</td>
                 <td>'.$address.'</td>
                 <td>
-                <a href= "" class="btn btn-primary">Edit</a>
-                <a href= "delete.php?id='.$id.'" class="btn btn-danger">Delete</a>
+                <a href= "edit.php?id='.$id.'" class="btn btn-primary">Edit</a>
+                <a href= "delete.php?id='.$id.'" class="btn btn-danger" onclick = "return confirm(\'Are you sure\')">Delete</a>
                 </td>
             </tr>';
             $serialNumber++;
